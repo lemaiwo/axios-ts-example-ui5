@@ -10,7 +10,7 @@
 |**Service URL**<br>N/A
 |**Module Name**<br>gridtool|
 |**Application Title**<br>Gridtool|
-|**Namespace**<br>be.elia.pm|
+|**Namespace**<br>be.wl.example|
 |**UI5 Theme**<br>sap_fiori_3|
 |**UI5 Version**<br>1.84.14|
 |**Enable Telemetry**<br>False|
