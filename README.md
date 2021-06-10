@@ -8,8 +8,8 @@
 |**Floorplan Used**<br>simple|
 |**Service Type**<br>None|
 |**Service URL**<br>N/A
-|**Module Name**<br>gridtool|
-|**Application Title**<br>Gridtool|
+|**Module Name**<br>axios-ts-example|
+|**Application Title**<br>axios-ts-example|
 |**Namespace**<br>be.wl.example|
 |**UI5 Theme**<br>sap_fiori_3|
 |**UI5 Version**<br>1.84.14|
