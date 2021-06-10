@@ -1,0 +1,59 @@
+{
+    "name": "axios-ts-example",
+    "version": "0.0.1",
+    "private": true,
+    "description": "axios-ts-example",
+    "keywords": [
+        "ui5",
+        "openui5",
+        "sapui5"
+    ],
+    "main": "webapp/index.html",
+    "scripts": {
+        "start:fiori": "fiori run --open 'index.html'",
+        "start-local": "fiori run --config ./ui5-local.yaml --open 'index.html'",
+        "start-noflp": "fiori run --open 'index.html'",
+        "build:ui5": "ui5 build -a --clean-dest --include-task=generateManifestBundle generateCachebusterInfo",
+        "deploy": "ui5 build preload --clean-dest --config ui5-deploy.yaml --include-task=generateManifestBundle generateCachebusterInfo && rimraf archive.zip",
+        "deploy-config": "fiori add deploy-config",
+        "unit-tests": "fiori run --open test/unit/unitTests.qunit.html",
+        "int-tests": "fiori run --open test/integration/opaTests.qunit.html",
+        "undeploy": "fiori undeploy --config ui5-deploy.yaml",
+        "ts-typecheck": "tsc --noEmit",
+        "lint": "eslint src",
+        "build:ts": "babel src --out-dir webapp --source-maps inline --extensions \".ts,.js\" --copy-files",
+        "watch:ts": "babel src --out-dir webapp --source-maps inline --extensions \".ts,.js\" --copy-files --watch",
+        "start:ui5": "ui5 serve --port 8080 -o index.html",
+        "build": "npm-run-all build:ts build:ui5",
+        "start": "npm-run-all --parallel watch:ts start:ui5"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.13.10",
+        "@babel/core": "^7.13.10",
+        "@babel/preset-env": "^7.13.10",
+        "@babel/preset-typescript": "^7.13.0",
+        "@types/dompurify": "^2.2.1",
+        "@types/jquery": "3.5.1",
+        "@types/qunit": "2.5.4",
+        "@sapui5/ts-types-esm": "1.90.0",
+        "@ui5/cli": "^2.11.0",
+        "@typescript-eslint/eslint-plugin": "^4.25.0",
+        "@typescript-eslint/parser": "^4.25.0",
+        "babel-preset-transform-ui5": "^7.0.3",
+        "eslint": "^7.27.0",
+        "npm-run-all": "^4.1.5",
+        "typescript": "^4.2.3",
+        "@ui5/fs": "^2.0.6",
+        "@ui5/logger": "^2.0.1",
+        "@sap/ux-ui5-tooling": "1",
+        "rimraf": "3.0.2"
+    },
+    "ui5": {
+        "dependencies": [
+            "@sap/ux-ui5-tooling"
+        ]
+    },
+    "dependencies": {
+        "axios": "^0.21.1"
+    }
+}
